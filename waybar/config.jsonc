@@ -1,0 +1,156 @@
+// ~/.config/waybar/config
+{
+  "layer": "top",
+  "position": "top",
+  "margin-top": 6,
+  "margin-left": 6,
+  "margin-right": 6,
+  "height": 24,
+  // -------- MÓDULOS --------
+  "modules-left": [
+    "hyprland/workspaces",
+    "custom/cava",
+    "custom/media-prev",
+    "mpris",
+    "custom/media-next"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "network",
+    "bluetooth",
+    "cpu",
+    "memory",
+    "disk",
+    "power-profiles-daemon",
+    "battery"
+  ],
+  // ---------- WORKSPACES ----------
+  "hyprland/workspaces": {
+    "format": "{id}",
+    "sort-by": "number",
+    "all-outputs": true,
+    "on-click": "activate",
+    "active-only": false,
+    "show-special": false,
+    "move-to-monitor": true,
+    "persistent-only": false
+  },
+  // ---------- RELÓGIO (com CAL no hover) ----------
+  "clock": {
+    "interval": 1,
+    "format": "{:%d/%m %H:%M}",
+    "locale": "pt_BR.UTF-8",
+    "tooltip": true,
+    "tooltip-format": "<big>{:%A, %d de %B de %Y}</big>\n<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1
+    },
+    "on-click": "kitty --class calcure-popup --title 'calcure' calcure",
+    "max-length": 25
+  },
+  // ---------- CAVA (tooltip volume + scroll volume + click play/pause) ----------
+  "custom/cava": {
+    "exec": "~/.config/waybar/scripts/cava.sh",
+    "return-type": "json",
+    "format": "{}",
+    "tooltip": true,
+    "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-",
+    "on-click": "~/.config/waybar/scripts/cover-popup.sh"
+  },
+  // ---------- MÍDIA (⏮ título ⏭) ----------
+  "mpris": {
+    "format": "{title}",
+    "format-paused": "{title}",
+    "format-stopped": "",
+    "max-length": 30,
+    "tooltip": true,
+    "interval": 1,
+    "on-click": "playerctl play-pause"
+  },
+  "custom/media-prev": {
+    "format": "",
+    "tooltip": "Anterior",
+    "on-click": "playerctl previous",
+    "interval": 0
+  },
+  "custom/media-next": {
+    "format": "",
+    "tooltip": "Próxima",
+    "on-click": "playerctl next",
+    "interval": 0
+  },
+  // ---------- INTERNET ----------
+  "network": {
+    "interval": 3,
+    "tooltip": true,
+    "format-wifi": "  {essid}",
+    "format-ethernet": "󰈀  {ifname}",
+    "format-disconnected": "󰤭  Offline",
+    "tooltip-format": "{ifname} via {gwaddr}\n↓ {bandwidthDownBits} ↑ {bandwidthUpBits}",
+    "on-click": "kitty --class wifitui-popup --title 'wifitui' wifitui"
+  },
+  // ---------- BLUETOOTH ----------
+  "bluetooth": {
+    "format": "  {status}",
+    "format-connected": "  {num_connections} conect.",
+    "format-disabled": "  Off",
+    "tooltip-format": "{controller_alias}\n{controller_address}",
+    "on-click": "kitty --class bluetui-popup --title 'bluetui' bluetui"
+  },
+  // ---------- CPU ----------
+  "cpu": {
+    "interval": 2,
+    "format": " {usage}%",
+    "max-length": 10
+  },
+  // ---------- RAM ----------
+  "memory": {
+    "interval": 5,
+    "format": " {used:0.1f}G",
+    "tooltip-format": "Usado: {used:0.1f}G\nTotal: {total:0.1f}G"
+  },
+  // ---------- DISCO ----------
+  "disk": {
+    "interval": 30,
+    "format": " {percentage_used}%",
+    "path": "/"
+  },
+  // ---------- PERFIL DE ENERGIA ----------
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Perfil de energia: {profile}",
+    "tooltip": true,
+    "format-icons": {
+      "performance": "",
+      "balanced": "",
+      "power-saver": ""
+    },
+    "on-click": "~/.config/waybar/scripts/toggle-power-profile.sh"
+  },
+  // ---------- BATERIA ----------
+  "battery": {
+    "interval": 10,
+    "states": {
+      "good": 80,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{time}",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  }
+}

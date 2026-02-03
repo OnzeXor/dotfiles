@@ -1,0 +1,222 @@
+/* ================== BASE ================== */
+
+window#waybar {
+  background: transparent;
+  color: #f4f4f4;
+  font-family:"JetBrainsMono Nerd Font Propo";
+  font-size: 11px;
+}
+
+#custom-media-next {
+  margin-right: 10px;
+}
+#custom-cava {
+    font-size: 24;
+    margin-right: 10px;
+}
+/* container principal da barra */
+window#waybar>box {
+  background-color: rgba(22, 22, 22, 0.9);
+  /* carbono (#161616) com ~10% de transparência */
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.45);
+  /* borda ffffff73 como pedido */
+  padding: 4px 6px;
+}
+
+/* ================== MÓDULOS ================== */
+
+#clock,
+#network,
+#bluetooth,
+#battery,
+#cpu,
+#memory,
+#disk,
+#custom-gpu,
+#mpris,
+#custom-media-prev,
+#custom-media-toggle,
+#custom-media-next,
+#workspaces {
+  padding: 0 10px;
+  color: #f4f4f4;
+}
+
+/* pequenos espaçamentos entre módulos "de sistema" */
+#network,
+#bluetooth,
+#cpu,
+#memory,
+#disk,
+#custom-gpu,
+#battery,
+#mpris {
+  margin-left: 4px;
+}
+
+/* Relógio central (a posição no meio é feita no config da waybar) */
+#clock {
+  font-weight: 600;
+  padding: 0 16px;
+}
+
+/* ================== NETWORK / BLUETOOTH / SISTEMA ================== */
+
+/* Ícone + nomezinho (label) – dá respiro entre eles */
+#network .icon,
+#bluetooth .icon,
+#battery .icon,
+#cpu .icon,
+#memory .icon,
+#disk .icon,
+#custom-gpu .icon {
+  margin-right: 4px;
+}
+
+/* Network */
+#network.disconnected {
+  color: #ff7eb6;
+}
+
+/* CPU / RAM / DISK / GPU / BAT */
+#cpu,
+#memory,
+#disk,
+#custom-gpu,
+#battery {
+  border-radius: 6px;
+  background-color: rgba(244, 244, 244, 0.04);
+  padding: 0 8px;
+}
+
+#cpu,
+#memory,
+#disk,
+#custom-gpu {
+  border: 1px solid rgba(244, 244, 244, 0.06);
+}
+
+/* botão de perfil de energia */
+#power-profiles-daemon {
+  padding: 0 8px;
+}
+
+#power-profiles-daemon:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+}
+
+/* Battery estados */
+#battery.good {
+  color: #42be65;
+}
+
+#battery.warning {
+  color: #f1c21b;
+}
+
+#battery.critical {
+  color: #ff7eb6;
+}
+
+/* ================== MÍDIA ================== */
+
+/* bloco de mídia (nome + controles) */
+#mpris {
+  /* max-width: 220px; */
+  /* nome grande vai cortando */
+  padding-right: 4px;
+}
+
+/* o texto da mídia – "vai sumindo" (ellipsis) */
+/* #mpris>label { */
+/*   text-overflow: ellipsis; */
+/*   overflow: hidden; */
+/*   white-space: nowrap; */
+/* } */
+
+/* deixa claro que o nome é clicável (pra popup de capa no config) */
+/* #mpris, */
+/* #mpris>label { */
+/*   cursor: pointer; */
+/* } */
+
+/* Controles separados do nomezinho – o nome fica mais à esquerda */
+#custom-media-prev,
+#custom-media-toggle,
+#custom-media-next {
+  padding: 0 4px;
+  margin-left: 2px;
+}
+
+#custom-media-prev:hover,
+#custom-media-toggle:hover,
+#custom-media-next:hover {
+  background-color: rgba(244, 244, 244, 0.12);
+  border-radius: 6px;
+}
+
+/* ================== WORKSPACES ================== */
+
+#workspaces {
+  padding: 0 6px;
+}
+
+#workspaces button {
+  background-color: transparent;
+  border-radius: 6px;
+  padding: 2px 7px;
+  margin: 0 2px;
+  color: #c6c6c6;
+  border: none;
+  transition: background-color 0.15s ease, color 0.15s ease, transform 0.1s ease;
+  /* os números vêm do config, aqui só estiliza */
+}
+
+#workspaces button.visible {
+  font-weight: 500;
+}
+
+#workspaces button.active {
+  font-weight: 700;
+  color: #161616;
+}
+
+#workspaces button:hover {
+  background-color: rgba(244, 244, 244, 0.1);
+  /* transform: translateY(-1px); */
+}
+
+/* ================== CORES POR MONITOR ================== */
+/* Troca eDP-1 / HDMI-A-1 / DP-1 pelos nomes reais do teu setup */
+
+/* Monitor 1 – Roxo Oxocarbon */
+window#waybar.eDP-1 #workspaces button.active {
+  background-color: #be95ff;
+}
+
+window#waybar.eDP-1 #workspaces button.visible:not(.active) {
+  background-color: rgba(190, 149, 255, 0.25);
+  color: #be95ff;
+}
+
+/* Monitor 2 – Rosa Oxocarbon */
+window#waybar.HDMI-A-2 #workspaces button.active {
+  background-color: #ff7eb6;
+}
+
+window#waybar.HDMI-A-2 #workspaces button.visible:not(.active) {
+  background-color: rgba(255, 126, 182, 0.25);
+  color: #ff7eb6;
+}
+
+/* Monitor 3 – Verde Oxocarbon */
+window#waybar.DP-1 #workspaces button.active {
+  background-color: #42be65;
+}
+
+window#waybar.DP-1 #workspaces button.visible:not(.active) {
+  background-color: rgba(66, 190, 101, 0.25);
+  color: #42be65;
+}

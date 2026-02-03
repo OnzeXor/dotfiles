@@ -1,0 +1,63 @@
+# Layout do prompt em duas linhas
+format = """\
+$username\
+$git_branch\
+$git_status\
+$nodejs\
+$python\
+$status\
+\n$directory$character\
+"""
+
+# Nome fixo
+[username]
+show_always = true
+style_user = "bold green"
+format = "onze "
+
+[hostname]
+disabled = true
+
+# Caminho (segunda linha)
+[directory]
+style = "fg:#7aa2f7"
+read_only = " "
+truncation_length = 999
+format = "[$path]($style)[$read_only]($read_only_style) "
+
+# Símbolo final com cor
+[character]
+success_symbol = " (fg:bold green) "
+error_symbol = "  "
+
+
+# Git
+[git_branch]
+symbol = " "
+style = "fg:#c0a36e"
+format = "[$symbol$branch]($style) "
+
+[git_status]
+style = "fg:#f7768e"
+format = "([$all_status]($style)) "
+
+# Node.js
+[nodejs]
+symbol = " "
+style = "fg:#9ece6a"
+format = "[$symbol($version)]($style) "
+
+# Python
+[python]
+symbol = " "
+style = "fg:#7dcfff"
+format = "[$symbol($version)]($style) "
+pyenv_version_name = true
+
+# Status de erro
+[status]
+symbol = "󰅙"
+style = "fg:#f7768e"
+format = "[$symbol $status]($style) "
+disabled = false
+

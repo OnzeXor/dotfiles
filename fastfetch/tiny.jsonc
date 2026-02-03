@@ -1,0 +1,56 @@
+{
+  "logo": {
+    "type": "command-raw",
+    "source": "pokemon-colorscripts -r --no-title",
+  },
+  "display": {
+    "separator": "  ",
+    "key": {
+      "type": "string",
+      "width": 4
+    }
+  },
+  "modules": [
+    {
+      "type": "kernel",
+      "key": "",
+      "keyColor": "red"
+    },
+    {
+      "type": "custom",
+      "format": ""
+    },
+    {
+      "type": "shell",
+      "key": "",
+      "keyColor": "green"
+    },
+    {
+      "type": "custom",
+      "format": ""
+    },
+    {
+      "type": "wm",
+      "key": "",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "custom",
+      "format": ""
+    },
+    {
+      "type": "terminal",
+      "key": "",
+      "keyColor": "blue"
+    },
+    {
+      "type": "custom",
+      "format": ""
+    },
+    {
+      "type": "uptime",
+      "key": "⏱",
+      "keyColor": "magenta"
+    }
+  ]
+}
