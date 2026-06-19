@@ -1,0 +1,52 @@
+
+
+[manager]
+cwd = { fg = "#78a9ff" }
+border = { fg = "#262626" }
+hovered = { bg = "#262626", fg = "#f2f4f8" }
+preview_border = { fg = "#262626" }
+preview_title = { fg = "#78a9ff" }
+
+[manager.file]
+fg = "#f2f4f8"
+hidden = { fg = "#a2a9b0" }
+symlink = { fg = "#78a9ff" }
+directory = { fg = "#ffffff" }          # <<< pastas brancas
+executable = { fg = "#42be65" }
+selected = { bg = "#262626", fg = "#78a9ff" }
+
+[icon]
+default = { fg = "#f2f4f8" }
+directory = { fg = "#ffffff" }          # <<< ícone da pasta branco
+symlink = { fg = "#78a9ff" }
+
+[input]
+border = { fg = "#262626" }
+title = { fg = "#78a9ff" }
+value = { fg = "#f2f4f8" }
+placeholder = { fg = "#a2a9b0" }
+
+[status]
+separator = { fg = "#262626" }
+mode = { fg = "#78a9ff" }
+progress = { fg = "#78a9ff" }
+permissions = { fg = "#a2a9b0" }
+blanks = { fg = "#a2a9b0" }
+
+[select]
+border = { fg = "#262626" }
+inactive = { bg = "#161616" }
+active = { bg = "#262626" }
+
+[which]
+mask = { bg = "#161616" }
+desc = { fg = "#a2a9b0" }
+border = { fg = "#262626" }
+title = { fg = "#78a9ff" }
+
+[task]
+title = { fg = "#78a9ff" }
+spinner = { fg = "#78a9ff" }
+done = { fg = "#42be65" }
+fail = { fg = "#ff7eb6" }
+

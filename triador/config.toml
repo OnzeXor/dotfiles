@@ -1,0 +1,121 @@
+# ~/.config/limpa-downloads/config.toml
+# Configuração do limpa-downloads
+# ─────────────────────────────────────────────────────────────────────
+# Diretório a ser organizado (padrão: ~/Downloads)
+downloads_dir = "~/Downloads"
+
+# Comando de lixeira: "auto" detecta automaticamente entre:
+#   gio trash | trash-put | trash | fallback manual para ~/.local/share/Trash
+# Ou especifique um comando manualmente:  "trash-put"
+trash_command = "auto"
+
+# ─── Keybindings ─────────────────────────────────────────────────────
+# Todos os valores abaixo são os padrões. Descomente e altere o que quiser.
+# Para teclas especiais use: "enter", "space", "tab", "escape", "f1"..."f12"
+# Para letras maiúsculas use: "G", "K", etc.
+
+[keybindings]
+keep             = "m"       # Manter arquivo em Downloads
+move             = "y"       # Mover para destino configurado
+trash            = "n"       # Enviar para a lixeira
+custom           = "c"       # Digitar destino personalizado
+summary          = "enter"   # Abrir resumo final
+summary_alt      = "space"   # Atalho alternativo para o resumo
+quit             = "q"       # Sair sem executar nada
+nav_down         = "j"       # Próximo arquivo (vim ↓)
+nav_up           = "k"       # Arquivo anterior (vim ↑)
+nav_first        = "g"       # Ir para o primeiro arquivo (vim gg)
+nav_last         = "G"       # Ir para o último arquivo (vim G)
+nav_next_pending = "tab"     # Pular para o próximo ainda sem classificação
+
+# ─── Mapeamento extensão → pasta de destino ──────────────────────────
+# Ao pressionar (y), o arquivo será movido para o diretório correspondente.
+# Crie as pastas com antecedência ou o programa as criará automaticamente.
+
+[mappings]
+# ── Imagens ──
+".jpg"   = "~/Pictures"
+".jpeg"  = "~/Pictures"
+".png"   = "~/Pictures"
+".gif"   = "~/Pictures"
+".webp"  = "~/Pictures"
+".svg"   = "~/Pictures/SVG"
+".heic"  = "~/Pictures"
+".bmp"   = "~/Pictures"
+".tiff"  = "~/Pictures"
+".tif"   = "~/Pictures"
+".raw"   = "~/Pictures/RAW"
+".arw"   = "~/Pictures/RAW"
+".cr2"   = "~/Pictures/RAW"
+".nef"   = "~/Pictures/RAW"
+
+# ── Vídeos ──
+".mp4"   = "~/Videos"
+".mkv"   = "~/Videos"
+".avi"   = "~/Videos"
+".mov"   = "~/Videos"
+".wmv"   = "~/Videos"
+".flv"   = "~/Videos"
+".webm"  = "~/Videos"
+".m4v"   = "~/Videos"
+".3gp"   = "~/Videos"
+
+# ── Áudio ──
+".mp3"   = "~/Music"
+".flac"  = "~/Music"
+".wav"   = "~/Music"
+".ogg"   = "~/Music"
+".aac"   = "~/Music"
+".m4a"   = "~/Music"
+".opus"  = "~/Music"
+".wma"   = "~/Music"
+
+# ── Documentos ──
+".pdf"   = "~/Documents/PDFs"
+".epub"  = "~/Documents/Books"
+".mobi"  = "~/Documents/Books"
+".djvu"  = "~/Documents/Books"
+".docx"  = "~/Documents/Office"
+".doc"   = "~/Documents/Office"
+".xlsx"  = "~/Documents/Office"
+".xls"   = "~/Documents/Office"
+".pptx"  = "~/Documents/Office"
+".ppt"   = "~/Documents/Office"
+".odt"   = "~/Documents/Office"
+".ods"   = "~/Documents/Office"
+".odp"   = "~/Documents/Office"
+".pages" = "~/Documents/Office"
+".numbers" = "~/Documents/Office"
+".key"   = "~/Documents/Office"
+
+# ── Texto / Código ──
+".txt"   = "~/Documents/Texto"
+".md"    = "~/Documents/Texto"
+".csv"   = "~/Documents/Dados"
+".json"  = "~/Documents/Dados"
+".xml"   = "~/Documents/Dados"
+
+# ── Arquivos compactados ──
+".zip"   = "~/Archives"
+".tar"   = "~/Archives"
+".gz"    = "~/Archives"
+".bz2"   = "~/Archives"
+".xz"    = "~/Archives"
+".7z"    = "~/Archives"
+".rar"   = "~/Archives"
+".zst"   = "~/Archives"
+
+# ── Instaladores Linux ──
+".deb"       = "~/Downloads/Installers"
+".rpm"       = "~/Downloads/Installers"
+".AppImage"  = "~/Applications"
+".flatpak"   = "~/Downloads/Installers"
+
+# ── Fontes ──
+".ttf"   = "~/.local/share/fonts"
+".otf"   = "~/.local/share/fonts"
+".woff"  = "~/.local/share/fonts"
+".woff2" = "~/.local/share/fonts"
+
+# ── Torrent ──
+".torrent" = "~/Downloads/Torrents"

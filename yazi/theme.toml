@@ -1,0 +1,145 @@
+# --- Nord / Kitty ---
+# Gerado para combinar com kitty/current-theme.conf (Nord)
+
+# Paleta Nord usada pelo terminal
+# fundo:      #2e3440
+# fundo-alt:  #3b4252
+# seleção:    #434c5e
+# texto:      #d8dee9
+# texto forte:#eceff4
+# azul:       #81a1c1
+# ciano:      #88c0d0
+# verde:      #a3be8c
+# amarelo:    #ebcb8b
+# vermelho:   #bf616a
+# magenta:    #b48ead
+
+[mgr]
+cwd = { fg = "#88c0d0", bold = true }
+
+hovered = { fg = "#2e3440", bg = "#88c0d0", bold = true }
+preview_hovered = { fg = "#2e3440", bg = "#88c0d0", bold = true }
+
+find_keyword  = { fg = "#ebcb8b", bold = true }
+find_position = { fg = "#b48ead", bold = true }
+
+marker_copied   = { fg = "#a3be8c", bold = true }
+marker_cut      = { fg = "#bf616a", bold = true }
+marker_marked   = { fg = "#ebcb8b", bold = true }
+marker_selected = { fg = "#88c0d0", bold = true }
+
+count_copied   = { fg = "#a3be8c", bold = true }
+count_cut      = { fg = "#bf616a", bold = true }
+count_selected = { fg = "#88c0d0", bold = true }
+
+border_symbol = "│"
+border_style  = { fg = "#4c566a" }
+
+icon_folder = ""
+icon_folder_fg = "#81a1c1"
+
+[tabs]
+active   = { fg = "#2e3440", bg = "#88c0d0", bold = true }
+inactive = { fg = "#d8dee9", bg = "#3b4252" }
+
+sep_inner = { open = " ", close = " " }
+sep_outer = { open = " ", close = " " }
+
+[mode]
+normal_main = { fg = "#2e3440", bg = "#88c0d0", bold = true }
+normal_alt  = { fg = "#d8dee9", bg = "#3b4252" }
+
+select_main = { fg = "#2e3440", bg = "#b48ead", bold = true }
+select_alt  = { fg = "#d8dee9", bg = "#3b4252" }
+
+unset_main  = { fg = "#2e3440", bg = "#ebcb8b", bold = true }
+unset_alt   = { fg = "#d8dee9", bg = "#3b4252" }
+
+[status]
+overall = { fg = "#d8dee9", bg = "#2e3440" }
+
+sep_left  = { open = "", close = "" }
+sep_right = { open = "",  close = "" }
+
+perm_type  = { fg = "#81a1c1", bold = true }
+perm_read  = { fg = "#88c0d0" }
+perm_write = { fg = "#ebcb8b" }
+perm_exec  = { fg = "#a3be8c" }
+perm_sep   = { fg = "#4c566a" }
+
+progress_label  = { fg = "#eceff4", bold = true }
+progress_normal = { fg = "#2e3440", bg = "#88c0d0" }
+progress_error  = { fg = "#2e3440", bg = "#bf616a" }
+
+[which]
+cols = 2
+mask = { bg = "#2e3440", fg = "#d8dee9" }
+cand = { fg = "#88c0d0", bold = true }
+rest = { fg = "#d8dee9" }
+desc = { fg = "#b48ead" }
+
+separator = " → "
+separator_style = { fg = "#4c566a" }
+
+[confirm]
+border  = { fg = "#4c566a" }
+title   = { fg = "#88c0d0", bold = true }
+content = { fg = "#d8dee9" }
+list    = { fg = "#d8dee9" }
+btn_yes = { fg = "#2e3440", bg = "#a3be8c", bold = true }
+btn_no  = { fg = "#2e3440", bg = "#bf616a", bold = true }
+btn_labels = ["Sim", "Não"]
+
+[spot]
+border   = { fg = "#4c566a" }
+title    = { fg = "#88c0d0", bold = true }
+tbl_col  = { fg = "#81a1c1", bold = true }
+tbl_cell = { fg = "#d8dee9", bg = "#3b4252" }
+
+[notify]
+title_info  = { fg = "#88c0d0", bold = true }
+title_warn  = { fg = "#ebcb8b", bold = true }
+title_error = { fg = "#bf616a", bold = true }
+
+[pick]
+border   = { fg = "#4c566a" }
+active   = { fg = "#2e3440", bg = "#88c0d0", bold = true }
+inactive = { fg = "#d8dee9", bg = "#3b4252" }
+
+[input]
+border   = { fg = "#4c566a" }
+title    = { fg = "#88c0d0", bold = true }
+value    = { fg = "#d8dee9" }
+selected = { fg = "#2e3440", bg = "#88c0d0", bold = true }
+
+[cmp]
+border   = { fg = "#4c566a" }
+active   = { fg = "#2e3440", bg = "#88c0d0", bold = true }
+inactive = { fg = "#d8dee9", bg = "#3b4252" }
+
+icon_file      = ""
+icon_folder    = ""
+icon_folder_fg = "#81a1c1"
+icon_command   = ""
+
+[tasks]
+border  = { fg = "#4c566a" }
+title   = { fg = "#88c0d0", bold = true }
+hovered = { fg = "#2e3440", bg = "#88c0d0", bold = true }
+
+[help]
+on      = { fg = "#88c0d0", bold = true }
+run     = { fg = "#81a1c1" }
+desc    = { fg = "#d8dee9" }
+hovered = { fg = "#2e3440", bg = "#88c0d0", bold = true }
+footer  = { fg = "#4c566a" }
+
+icon_info  = ""
+icon_warn  = ""
+icon_error = ""
+
+[filetype]
+rules = [
+  { mime = "inode/directory", fg = "#81a1c1", bold = true },
+  { mime = "*", fg = "#d8dee9" }
+]
