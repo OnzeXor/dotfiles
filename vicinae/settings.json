@@ -50,7 +50,7 @@
       },
       "clipboard": {
          "preferences": {
-            "monitoring": false
+            "monitoring": true
          }
       },
       "system": {

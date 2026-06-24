@@ -1,5 +1,10 @@
 return {
   "stevearc/oil.nvim",
+  cmd = "Oil",
+  keys = {
+    { "<leader>e", "<cmd>Oil --float<CR>", desc = "Abrir Oil" },
+  },
+  dependencies = { { "nvim-mini/mini.icons", opts = {} } },
   ---@module 'oil'
   ---@type oil.SetupOpts
   opts = {
@@ -9,10 +14,10 @@ return {
     },
     use_default_keymaps = true,
     keymaps = {
-      ["L"] = "actions.select", -- entrar na pasta / abrir arquivo
-      ["H"] = "actions.parent", -- subir um nível
-      ["<CR>"] = "actions.select", -- mantém o Enter funcionando
-      ["q"] = "actions.close", -- fecha o Oil bonitinho
+      ["L"] = "actions.select",
+      ["H"] = "actions.parent",
+      ["<CR>"] = "actions.select",
+      ["q"] = "actions.close",
       ["K"] = "actions.preview",
       ["gr"] = "actions.refresh",
       ["g."] = "actions.toggle_hidden",
@@ -21,15 +26,10 @@ return {
       padding = 4,
       max_width = 90,
       max_height = 30,
-      border = "rounded", -- single, double, shadow, rounded
+      border = "rounded",
       win_options = {
-        winblend = 00, -- transparência
+        winblend = 0,
       },
     },
   },
-  keys = {
-    { "<leader>e", "<cmd>Oil --float<CR>", desc = "Abrir Oil bonitinho" },
-  },
-  dependencies = { { "nvim-mini/mini.icons", opts = {} } },
-  lazy = false,
 }

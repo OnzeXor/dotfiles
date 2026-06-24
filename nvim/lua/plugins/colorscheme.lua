@@ -155,7 +155,6 @@ return {
   { "folke/tokyonight.nvim", lazy = true },
   { "catppuccin/nvim", name = "catppuccin", lazy = true },
   { "ellisonleao/gruvbox.nvim", lazy = true },
-  { "nyoom-engineering/oxocarbon.nvim", lazy = true },
 
   -- Mantido disponível, mas não ativo como tema principal.
   { "szymonwilczek/arete.nvim", lazy = true },
