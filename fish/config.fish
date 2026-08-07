@@ -23,6 +23,7 @@ if status is-interactive
     alias n="nvim"
     alias py="python"
 
+    alias s="yay -Ss"
     # Starship prompt
     starship init fish | source
 end
