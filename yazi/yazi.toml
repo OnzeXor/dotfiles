@@ -1,3 +1,9 @@
 # yazi.toml
 [mgr]
 show_hidden = true
+[manager]
+linemode = "mtime"          # Mostra a data de modificação ao lado de cada arquivo
+show_hidden = false
+sort_by = "btime"           # Padrão por data de criação (birth time)
+sort_reverse = true         # Mais recentes primeiro
+sort_dir_first = true       # Diretórios sempre no topo

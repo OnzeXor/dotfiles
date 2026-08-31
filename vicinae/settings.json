@@ -12,6 +12,7 @@
    "$schema": "https://vicinae.com/schemas/config.json",
    "favicon_service": "google",
    "font": {
+      "rendering": "qt",
       "normal": {
          "family": "SF Pro Text"
       }
@@ -22,7 +23,11 @@
       }
    },
    "launcher_window": {
+      "opacity": 0.98,
       "client_side_decorations": {
+         "enabled": true
+      },
+      "compact_mode": {
          "enabled": true
       }
    },

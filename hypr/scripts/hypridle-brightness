@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+set -u
+
+state_file=/tmp/hypridle_brightness_saved
+
+on_ac_power() {
+  local f
+  for f in /sys/class/power_supply/*/online; do
+    if [[ -f "$f" && "$(cat "$f")" == "1" ]]; then
+      return 0
+    fi
+  done
+
+  return 1
+}
+
+case "${1:-}" in
+  dim)
+    if command -v brightnessctl >/dev/null 2>&1; then
+      [[ -f "$state_file" ]] || brightnessctl -m | cut -d, -f4 > "$state_file"
+
+      if on_ac_power; then
+        brightnessctl set 15% >/dev/null
+      else
+        brightnessctl set 30% >/dev/null
+      fi
+    fi
+
+    command -v playerctl >/dev/null 2>&1 && playerctl pause 2>/dev/null || true
+    ;;
+  restore)
+    if [[ -f "$state_file" ]] && command -v brightnessctl >/dev/null 2>&1; then
+      brightnessctl set "$(cat "$state_file")" >/dev/null 2>&1 || true
+      rm -f "$state_file"
+    fi
+    ;;
+  *)
+    echo "Usage: $0 {dim|restore}" >&2
+    exit 2
+    ;;
+esac
