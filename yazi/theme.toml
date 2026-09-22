@@ -48,3 +48,7 @@ mode_unset  = { fg = "#2E3440", bg = "#BF616A", bold = true }
 progress_label  = { fg = "#ECEFF4", bold = true }
 progress_normal = { fg = "#81A1C1", bg = "#3B4252" }
 progress_error  = { fg = "#BF616A", bg = "#3B4252" }
+
+[flavor]
+dark  = "noctalia"
+light = "noctalia"
