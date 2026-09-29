@@ -50,5 +50,5 @@ progress_normal = { fg = "#81A1C1", bg = "#3B4252" }
 progress_error  = { fg = "#BF616A", bg = "#3B4252" }
 
 [flavor]
-dark  = "noctalia"
+dark = "noctalia"
 light = "noctalia"

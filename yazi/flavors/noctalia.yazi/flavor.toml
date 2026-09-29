@@ -76,9 +76,9 @@ selected = { reversed = true }
 # : Tabs [[[
 
 [tabs]
-active = { fg = "#8fbcbb", bold = true, bg = "#2e3440" }
+active = { fg = "#2e3440", bold = true, bg = "#8fbcbb" }
 inactive = { fg = "#88c0d0", bg = "#2e3440" }
-sep_inner = { open = "[", close = "]" }
+sep_inner = { open = "", close = "" }
 
 # : ]]]
 
@@ -152,16 +152,16 @@ title_error = { fg = "#bf616a" }
 
 rules = [
     # Images
-    { mime = "image/*", fg = "#94e2d5" },
+    { mime = "image/*", fg = "#96e9e7" },
 
     # Media
-    { mime = "{audio,video}/*", fg = "#f9e2af" },
+    { mime = "{audio,video}/*", fg = "#96bbe9" },
 
     # Archives
-    { mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", fg = "#f5c2e7" },
+    { mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", fg = "#88c0d0" },
 
     # Documents
-    { mime = "application/{pdf,doc,rtf}", fg = "#a6e3a1" },
+    { mime = "application/{pdf,doc,rtf}", fg = "#5e81ac" },
 
     # Special files
     { mime = "*", is = "orphan", fg = "#f0dbdd", bg = "#56171d" },
