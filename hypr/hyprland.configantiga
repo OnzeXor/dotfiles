@@ -11,7 +11,14 @@
 ################
 ### MONITORS ###
 ################
+# RTX 3050 primária (01:00.0) e Intel secundária (00:02.0)
+env = AQ_DRM_DEVICES,/dev/dri/by-path/pci-0000:01:00.0-card:/dev/dri/by-path/pci-0000:00:02.0-card
 
+# Renderização e Wayland na Nvidia
+env = LIBVA_DRIVER_NAME,nvidia
+env = __GLX_VENDOR_LIBRARY_NAME,nvidia
+env = NVD_BACKEND,direct
+env = ELECTRON_OZONE_PLATFORM_HINT,auto
 monitor = HDMI-A-2,2560x1080@60,1920x220,1
 monitor = eDP-1,1920x1080@144,0x0,1
 
@@ -219,7 +226,7 @@ device {
 ###################
 
 $mainMod = SUPER
-
+$mainmod2 = mouse:276
 bind = $mainMod, F, fullscreen, 0
 bind = $mainMod, RETURN, exec, $terminal
 bind = $mainMod, Escape, exec, noctalia msg panel-toggle session
@@ -299,7 +306,7 @@ bind = , XF86AudioMute, exec, pamixer -t
 
 # Microfone
 bind = CTRL, RETURN, exec, voxtype record toggle
-
+# Abre o painel de configurações rápidas (Wi-Fi, Volume, Bluetooth) ao soltar o Super
 # Media controls
 bind = , XF86AudioPlay, exec, playerctl play-pause
 bind = , XF86AudioPause, exec, playerctl play-pause

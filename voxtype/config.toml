@@ -9,6 +9,7 @@
 # ("idle", "recording", "transcribing") to this file whenever it changes.
 # Required for `voxtype record toggle` and `voxtype status` commands.
 state_file = "auto"
+engine = "parakeet"
 
 [hotkey]
 # Key to hold for push-to-talk
@@ -85,6 +86,10 @@ language = "auto"
 
 # Translate non-English speech to English
 translate = false
+mode = "local"
+flash_attention = false
+on_demand_loading = false
+gpu_isolation = false
 
 # Number of CPU threads for inference (omit for auto-detection)
 # threads = 4
@@ -172,6 +177,9 @@ fallback_to_clipboard = true
 # Delay between typed characters in milliseconds
 # 0 = fastest possible, increase if characters are dropped
 type_delay_ms = 0
+auto_submit = false
+shift_enter_newlines = false
+pre_type_delay_ms = 0
 
 # Automatically submit (send Enter key) after outputting transcribed text
 # Useful for chat applications, command lines, or forms where you want
@@ -239,6 +247,26 @@ on_recording_stop = false
 
 # Show notification with transcribed text after transcription completes
 on_transcription = true
+
+[parakeet]
+model = "parakeet-tdt-0.6b-v3"
+on_demand_loading = false
+
+[osd]
+enabled = true
+frontend = "native"
+style = "default"
+layout = "wide"
+position = "bottom-center"
+width_px = 400
+height_px = 48
+margin_px = 24
+top_margin = 0.85
+opacity = 0.95
+waveform_window_secs = 5.0
+peak_decay_db_per_sec = 6.0
+waveform_gain = 10.0
+palette = "custom"
 
 # Notification urgency level: "low", "normal", or "critical".
 # On GNOME, "low" notifications are delivered to the drawer without a popup banner.
